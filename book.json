@@ -59,8 +59,7 @@
    
           "wechat": "https://gitee.com/boogie96/img/raw/master/img/weChat.JPG.jpg",
           "title": "给他一杯中杯拿铁",
-          "button": "Donate",
-          "wechatText": "Give me a medium latte"
+          "button": "Donate"
         }
 
   }
