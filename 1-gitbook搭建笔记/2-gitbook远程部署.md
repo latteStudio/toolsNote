@@ -16,15 +16,25 @@
 
 6. 推动本地的电子书目录到远程仓库的主分支；
 
-7. **本地目录添加book.json README.md  .github/workflows/auto-deply-site.yml**
+7. **本地目录添加book.json README.md  .github/workflows/auto-deploy-site.yml**
 
    (auto-deploy-site.yml存放在特定的目录结构下，会被github识别，运行其中的actions，其中actions就相当于Jenkins的构建项目指令，可以将推送的书籍源码，构建为gitbook电子书格式，并推送到仓库)
 
    （实现机制：运行基本环境容器，并在其中安装nodejs，gitbook等包，在容器中编译为gitbook网页版的格式，然后推送到github，之后容器删除，实现了自动部署gitbook网页）
+   
+8. github上，个人设置中，生成access token
+
+9. 并添加到仓库的secrts中，命名为token，auto-deploy-site.yml会用到；
 
 ## 部署过程
 
-### 
+## 待解决问题
+
+- summary的自动生成，影响井号分隔符使用；
+- image，图片的上传失败，路径问题；
+- book.json定义
+
+
 
 # 单仓库多分支手动部署
 
