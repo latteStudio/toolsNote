@@ -111,7 +111,7 @@
 
   - npm install 安装gitbook-summary插件， 先创建目录，利用book sm命令可以根据顶级目录下的各级目录和文件自动生成SUMMARY.md文件
 
-![image-20210112165034221](C:\Users\latteplus\AppData\Roaming\Typora\typora-user-images\image-20210112165034221.png)
+![image-20210112165034221](https://gitee.com/boogie96/pic-go-bed/raw/master/img/image-20210112165034221.png)
 
 - book.json为书的配置文件，
   - 定义书的标题
