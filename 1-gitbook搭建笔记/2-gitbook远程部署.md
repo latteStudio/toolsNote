@@ -115,7 +115,7 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
    ```powershell
    latteplus@LAPTOP-00EFC09V MINGW64 /d/myEbook/leanGitNote (master)
    $ git branch -M main
-   # 一般习惯将master改名为main分支，且actions的文件中也用到main分支，（要保持一致
+   一般习惯将master改名为main分支，且actions的文件中也用到main分支，（要保持一致
    
    
    latteplus@LAPTOP-00EFC09V MINGW64 /d/myEbook/leanGitNote (main)
@@ -127,7 +127,7 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
    origin  git@github.com:latteplus/learn-git-note.git (fetch)
    origin  git@github.com:latteplus/learn-git-note.git (push)
    
-   # 在这之前的步骤
+   在这之前的步骤
    1，本地生成密钥对
    2，公钥添加到github账户
    3，git config配置姓名和账户
@@ -175,10 +175,7 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
 
    ```powershell
    latteplus@LAPTOP-00EFC09V MINGW64 /d/myEbook/leanGitNote (main)
-   $ cat README.md # 写书籍介绍
-   # 本书介绍
    
-   **本书为git学习笔记**
    latteplus@LAPTOP-00EFC09V MINGW64 /d/myEbook/leanGitNote (main)
    $ vi book.json # 一般改个title书名就好
    ```
@@ -196,19 +193,19 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
      push:
        branches:
        - main
-   # 触发条件为，main分支有push时
+   触发条件为，main分支有push时
    
    
-   # 一系列构建流程
-   # 运行ubuntu容器
-   # 拉取代码（直接引用了官方定义好的actions
-   # 安装nodejs
-   # 安装gitbook-cli和gitbook-summary
-   # book sm生成SUMMARY.md文件（注意在gitbook build之前，不然会把构建后的node_modules目录也加到该文件中，当然可以通过book.json中的ignore配置忽略该目录，可自行搜索
-   # gitbook install安装book.json中定义的插件
-   # gitbook build构建静态网页文件
-   # 拷贝SUMMARY.md文件到_book目录
-   # 推送_book目录下所有文件到github中gitbook所在仓库的分支gh-pages（固定名称
+    一系列构建流程
+    运行ubuntu容器
+    拉取代码（直接引用了官方定义好的actions
+    安装nodejs
+    安装gitbook-cli和gitbook-summary
+    book sm生成SUMMARY.md文件（注意在gitbook build之前，不然会把构建后的node_modules目录也加到该文件中，当然可以通过book.json中的ignore配置忽略该目录，可自行搜索
+    gitbook install安装book.json中定义的插件
+    gitbook build构建静态网页文件
+    拷贝SUMMARY.md文件到_book目录
+    推送_book目录下所有文件到github中gitbook所在仓库的分支gh-pages（固定名称
    jobs:
      main-to-gh-pages:
        runs-on: ubuntu-latest
@@ -240,8 +237,8 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
            REF: github.com/${{github.repository}}
            MYEMAIL: boogies@163.com                # ！！记得修改为自己邮箱
            MYNAME: ${{github.repository_owner}}
-   # TOKEN为引用的该仓库下的secrets变量，需提前设置
-   # github.repository 和 github.repository_owner 都是内建变量，值为该仓库的名和用户名
+    TOKEN为引用的该仓库下的secrets变量，需提前设置
+    github.repository 和 github.repository_owner 都是内建变量，值为该仓库的名和用户名
          run: |
            cd _book
            git config --global user.email "${MYEMAIL}"
@@ -252,7 +249,7 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
            git commit -m "Updated By Github Actions With Build ${{github.run_number}} of ${{github.workflow}} For Github Pages"
            git branch -M main
            git push --force --quiet "https://${TOKEN}@${REF}" main:gh-pages
-   # 在action中定义了所有的构建过程，所以本机甚至不需要安装gitbook，在启动的容器中全部完成了。
+    在action中定义了所有的构建过程，所以本机甚至不需要安装gitbook，在启动的容器中全部完成了。
    ```
 
    
