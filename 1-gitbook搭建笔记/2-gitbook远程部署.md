@@ -68,7 +68,7 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
 
 2. 创建一个目录，用于存放电子书的md文件，并git初始化；
 
-   ```
+   ```powershell
    latteplus@LAPTOP-00EFC09V MINGW64 /d/myEbook/leanGitNote
    $ pwd
    /d/myEbook/leanGitNote
@@ -84,7 +84,7 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
 
    （目录可多级嵌套，序号后用-短横线分割，**之后在actions中借助book sm自动生成summary.md文件**
 
-   ```
+   ```powershell
    $ mkdir.exe 1-git初识
    
    latteplus@LAPTOP-00EFC09V MINGW64 /d/myEbook/leanGitNote (master)
@@ -112,7 +112,7 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
 
 5. 本地电子书文件夹，和远程仓库相关联；
 
-   ```
+   ```powershell
    latteplus@LAPTOP-00EFC09V MINGW64 /d/myEbook/leanGitNote (master)
    $ git branch -M main
    # 一般习惯将master改名为main分支，且actions的文件中也用到main分支，（要保持一致
@@ -137,7 +137,7 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
 
 6. 推动本地的电子书目录到远程仓库的主分支；
 
-   ```
+   ```powershell
    latteplus@LAPTOP-00EFC09V MINGW64 /d/myEbook/leanGitNote (main)
    $ git add .
    
@@ -173,7 +173,7 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
 
    ![image-20210112190624581](https://gitee.com/boogie96/pic-go-bed/raw/master/img/image-20210112190624581.png)
 
-   ```
+   ```powershell
    latteplus@LAPTOP-00EFC09V MINGW64 /d/myEbook/leanGitNote (main)
    $ cat README.md # 写书籍介绍
    # 本书介绍
