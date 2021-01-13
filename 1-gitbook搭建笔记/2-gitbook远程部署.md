@@ -296,10 +296,3 @@ github actions[介绍](https://docs.github.com/en/free-pro-team@latest/actions)�
 3. 本地gitbook build
 4. 然后将生成的_book目录下的网页文件推送到gh-pages分支完成部署
 5. 将上述步骤写成脚本，会便捷些
-
-```shell
-#!/bin/bash
-echo 1
-# 测试注释
-```
-
